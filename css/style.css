@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,7 +10,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -15,10 +25,13 @@ html {
 
 .navbar {
   background: #0b1f3a;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+
+  padding: 18px 40px;
+
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -26,8 +39,9 @@ html {
 
 .logo {
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .nav-links {
@@ -38,20 +52,27 @@ html {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
+  font-size: 17px;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #d4b483;
 }
 
-/* HAMBURGER */
+.nav-links a.active {
+  color: #d4b483;
+  font-weight: bold;
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
 
 .menu-toggle {
   display: none;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   cursor: pointer;
 }
 
@@ -61,9 +82,9 @@ html {
 
 .hero {
   position: relative;
+
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 
   display: flex;
   justify-content: center;
@@ -71,10 +92,13 @@ html {
 
   text-align: center;
   color: white;
+
+  overflow: hidden;
 }
 
 .bg-video {
   position: absolute;
+
   top: 0;
   left: 0;
 
@@ -92,13 +116,14 @@ html {
   content: "";
 
   position: absolute;
+
   top: 0;
   left: 0;
 
   width: 100%;
   height: 100%;
 
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
 
   z-index: -1;
 }
@@ -106,7 +131,9 @@ html {
 /* HERO CONTENT */
 
 .hero-content {
+  position: relative;
   z-index: 2;
+
   max-width: 900px;
   padding: 20px;
 }
@@ -117,11 +144,13 @@ html {
 }
 
 .hero-content p {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 30px;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .btn {
   display: inline-block;
@@ -132,14 +161,13 @@ html {
   color: white;
 
   text-decoration: none;
+  font-weight: bold;
 
   border-radius: 6px;
 
-  margin: 10px;
-
-  font-weight: bold;
-
   transition: 0.3s ease;
+
+  margin: 10px;
 }
 
 .btn:hover {
@@ -151,25 +179,6 @@ html {
   border: 2px solid white;
 }
 
-/* MOVING TRUCK */
-
-.moving-truck {
-  font-size: 60px;
-  position: relative;
-  animation: moveTruck 10s linear infinite;
-  margin-top: 20px;
-}
-
-@keyframes moveTruck {
-  0% {
-    left: -120px;
-  }
-
-  100% {
-    left: 100%;
-  }
-}
-
 /* =========================
    SERVICES SECTION
 ========================= */
@@ -177,12 +186,11 @@ html {
 .services {
   padding: 80px 20px;
   text-align: center;
-  background: white;
 }
 
-.services h1,
 .services h2 {
   font-size: 45px;
+  color: #0b1f3a;
   margin-bottom: 20px;
 }
 
@@ -190,22 +198,87 @@ html {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+
   flex-wrap: wrap;
+
+  margin-top: 40px;
 }
 
 .card {
   background: #f4f4f4;
-  padding: 30px;
-  width: 300px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 
-  transition: 0.3s;
+  width: 300px;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #0b1f3a;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-section {
+  background: #f8f8f8;
+
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 45px;
+  color: #0b1f3a;
+
+  margin-bottom: 15px;
+}
+
+.gallery-text {
+  color: #666;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 25px;
+}
+
+.gallery-item {
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+
+  transition: 0.4s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.08);
 }
 
 /* =========================
@@ -220,9 +293,9 @@ html {
   justify-content: center;
   gap: 40px;
 
-  padding: 60px 20px;
-
   flex-wrap: wrap;
+
+  padding: 70px 20px;
 }
 
 .stat-box {
@@ -235,7 +308,79 @@ html {
 }
 
 /* =========================
-   GENERIC HERO PAGES
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 45px;
+  color: #0b1f3a;
+
+  margin-bottom: 20px;
+}
+
+.testimonial-text {
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: #f4f4f4;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section {
+  background: #0b1f3a;
+  color: white;
+
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+.cta-section h2 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  margin-bottom: 30px;
+}
+
+/* =========================
+   GENERIC HERO SECTIONS
 ========================= */
 
 .about-hero,
@@ -244,9 +389,9 @@ html {
   height: 60vh;
 
   background:
-    linear-gradient(rgba(0,0,0,0.6),
-    rgba(0,0,0,0.6)),
-    url('../images/truck.jpg');
+    linear-gradient(rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)),
+    url("../images/truck.jpg");
 
   background-size: cover;
   background-position: center;
@@ -271,11 +416,11 @@ html {
 .about-overlay p,
 .services-overlay p,
 .contact-overlay p {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /* =========================
-   ABOUT PAGE
+   ABOUT CONTENT
 ========================= */
 
 .about-content {
@@ -283,33 +428,50 @@ html {
   justify-content: center;
   align-items: center;
 
-  gap: 40px;
+  gap: 50px;
 
   padding: 80px 40px;
 
   flex-wrap: wrap;
+
+  background: #ffffff;
 }
 
-.about-text,
-.about-image {
+.about-text {
   flex: 1;
   min-width: 300px;
 }
 
 .about-text h2 {
-  font-size: 40px;
+  font-size: 42px;
+  color: #0b1f3a;
   margin-bottom: 20px;
 }
 
 .about-text p {
-  margin-bottom: 20px;
-  line-height: 1.8;
   font-size: 18px;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+
+  display: flex;
+  justify-content: center;
 }
 
 .about-image img {
   width: 100%;
-  border-radius: 12px;
+  max-width: 550px;
+
+  border-radius: 15px;
+
+  object-fit: cover;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -325,19 +487,19 @@ html {
 
   gap: 30px;
 
-  padding: 80px 20px;
-
   flex-wrap: wrap;
+
+  padding: 80px 20px;
 }
 
 .mission-box {
   width: 400px;
 
-  background: rgba(255,255,255,0.08);
-
   padding: 30px;
 
   border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
 
   text-align: center;
 }
@@ -349,9 +511,12 @@ html {
 .services-page {
   display: flex;
   justify-content: center;
+
   gap: 30px;
-  padding: 80px 20px;
+
   flex-wrap: wrap;
+
+  padding: 80px 20px;
 }
 
 .service-card {
@@ -365,7 +530,7 @@ html {
 
   text-align: center;
 
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 
   transition: 0.3s ease;
 }
@@ -380,37 +545,34 @@ html {
 }
 
 /* =========================
-   CTA SECTION
-========================= */
-
-.cta-section {
-  background: #0b1f3a;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.cta-section h2 {
-  font-size: 45px;
-  margin-bottom: 20px;
-}
-
-/* =========================
    CONTACT PAGE
 ========================= */
 
 .contact-container {
   display: flex;
   justify-content: center;
+
   gap: 40px;
-  padding: 80px 20px;
+
   flex-wrap: wrap;
+
+  padding: 80px 20px;
 }
 
 .contact-info,
 .booking-form {
   flex: 1;
   min-width: 300px;
+}
+
+.contact-info h2,
+.booking-form h2 {
+  margin-bottom: 25px;
+  color: #0b1f3a;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
 }
 
 .booking-form form {
@@ -421,6 +583,7 @@ html {
 .booking-form input,
 .booking-form textarea {
   padding: 15px;
+
   margin-bottom: 20px;
 
   border: 1px solid #ccc;
@@ -430,16 +593,26 @@ html {
   font-size: 16px;
 }
 
-/* BUSINESS HOURS */
+.booking-form textarea {
+  resize: vertical;
+}
+
+/* =========================
+   BUSINESS HOURS
+========================= */
 
 .business-hours {
   background: #0b1f3a;
   color: white;
+
   text-align: center;
+
   padding: 70px 20px;
 }
 
-/* MAP */
+/* =========================
+   MAP
+========================= */
 
 .map-section iframe {
   width: 100%;
@@ -447,7 +620,9 @@ html {
   border: 0;
 }
 
-/* WHATSAPP BUTTON */
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 
 .floating-whatsapp {
   position: fixed;
@@ -455,150 +630,25 @@ html {
   bottom: 20px;
   right: 20px;
 
-  background: #25d366;
-
-  color: white;
-
   width: 60px;
   height: 60px;
+
+  background: #25d366;
+  color: white;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 50%;
-
   text-decoration: none;
+
+  border-radius: 50%;
 
   font-size: 30px;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
   z-index: 1000;
-}
-
-/* =========================
-   GALLERY SECTION
-========================= */
-
-.gallery-section {
-  padding: 80px 20px;
-
-  text-align: center;
-
-  background: #f8f8f8;
-}
-
-.gallery-section h2 {
-  font-size: 45px;
-
-  margin-bottom: 20px;
-
-  color: #0b1f3a;
-}
-
-.gallery-text {
-  font-size: 20px;
-
-  margin-bottom: 50px;
-
-  color: #555;
-}
-
-.gallery-grid {
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-  gap: 25px;
-}
-
-.gallery-item {
-  overflow: hidden;
-
-  border-radius: 15px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.gallery-item img {
-  width: 100%;
-
-  height: 300px;
-
-  object-fit: cover;
-
-  transition: 0.5s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.08);
-}
-
-/* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonials {
-  padding: 80px 20px;
-
-  background: white;
-
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 45px;
-
-  color: #0b1f3a;
-
-  margin-bottom: 20px;
-}
-
-.testimonial-text {
-  font-size: 20px;
-
-  color: #666;
-
-  margin-bottom: 50px;
-}
-
-.testimonial-grid {
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 30px;
-}
-
-.testimonial-card {
-  background: #f4f4f4;
-
-  padding: 35px;
-
-  border-radius: 15px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-
-  transition: 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-10px);
-}
-
-.quote {
-  font-size: 18px;
-
-  line-height: 1.8;
-
-  margin-bottom: 25px;
-
-  color: #444;
-}
-
-.testimonial-card h3 {
-  color: #0b1f3a;
 }
 
 /* =========================
@@ -608,7 +658,9 @@ html {
 footer {
   background: #0b1f3a;
   color: white;
+
   text-align: center;
+
   padding: 20px;
 }
 
@@ -617,6 +669,10 @@ footer {
 ========================= */
 
 @media (max-width: 768px) {
+
+  .navbar {
+    padding: 18px 20px;
+  }
 
   .menu-toggle {
     display: block;
@@ -627,14 +683,14 @@ footer {
 
     flex-direction: column;
 
-    width: 100%;
-
-    background: #0b1f3a;
-
     position: absolute;
 
     top: 80px;
     left: 0;
+
+    width: 100%;
+
+    background: #0b1f3a;
 
     text-align: center;
 
@@ -662,6 +718,26 @@ footer {
   .services-overlay h1,
   .contact-overlay h1 {
     font-size: 40px;
+  }
+
+  .service-grid,
+  .services-page,
+  .contact-container,
+  .about-content {
+    flex-direction: column;
+  }
+
+  .card,
+  .service-card,
+  .mission-box {
+    width: 100%;
+  }
+
+  .gallery-section h2,
+  .services h2,
+  .testimonials h2,
+  .cta-section h2 {
+    font-size: 32px;
   }
 
 }
